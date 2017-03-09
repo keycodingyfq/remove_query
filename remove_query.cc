@@ -69,11 +69,11 @@ url_query_check(TSHttpTxn txnp)
 		req_url = TSHttpTxnEffectiveUrlStringGet(txnp, &url_length);
 
 		comma = strchr(req_url, '?');
-		if(comma != nullptr){
+		if(comma != NULL){
 			snprintf(new_url, comma-req_url+1, req_url);
 		    snprintf(cache_key_url, 8192, "%s", new_url);
 		    TSDebug(PLUGIN_NAME,"Rewriting cache URL for %s to %s", req_url, cache_key_url);
-		    if (req_url != nullptr) {
+		    if (req_url != NULL) {
 		    	TSfree(req_url);
 		    }
 
@@ -90,11 +90,11 @@ url_query_check(TSHttpTxn txnp)
 //
 //            comma = strchr(req_url, '?');
 //
-//            if(comma != nullptr){
+//            if(comma != NULL){
 //                snprintf(new_url, comma-req_url+1, req_url);
 //    			  snprintf(cache_key_url, 8192, "%s", new_url);
 //    			  TSDebug(PLUGIN_NAME,"Rewriting cache URL for %s to %s", req_url, cache_key_url);
-//    			  if (req_url != nullptr) {
+//    			  if (req_url != NULL) {
 //    				TSfree(req_url);
 //    			  }
 //
