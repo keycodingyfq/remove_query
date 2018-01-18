@@ -58,8 +58,8 @@ url_query_check(TSHttpTxn txnp) {
 
 		if (comma != nullptr) {
 			new_length = comma - req_url;
-			if (new_length > 8191)
-				new_length = 8191;
+			if (new_length > url_length)
+				new_length = url_length;
 
 			char new_url[new_length + 1];
 			memcpy(new_url, req_url, new_length);
